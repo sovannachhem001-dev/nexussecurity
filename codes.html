@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020c0a">
+  <meta name="description" content="Add, edit, and remove your saved secret codes.">
+  <title>Code Manager — NEXUS Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <canvas class="matrix-canvas" id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient--left" aria-hidden="true"></div>
+  <div class="ambient ambient--right" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="grid-floor" aria-hidden="true"></div>
+  <div class="screen-frame" aria-hidden="true">
+    <span class="frame-corner frame-corner--tl"></span>
+    <span class="frame-corner frame-corner--tr"></span>
+    <span class="frame-corner frame-corner--bl"></span>
+    <span class="frame-corner frame-corner--br"></span>
+    <span class="frame-light frame-light--left"></span>
+    <span class="frame-light frame-light--right"></span>
+  </div>
+
+  <main class="app-shell code-manager-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="NEXUS home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span class="brand-name">NEXUS<span>//</span>SECURITY</span>
+      </a>
+      <div class="system-status"><span class="status-dot"></span><span>CODE VAULT</span></div>
+      <a class="sound-toggle manager-back-link" href="index.html">← BACK TO GAME</a>
+    </header>
+
+    <section class="code-manager-panel" aria-labelledby="manager-title">
+      <div class="panel-topline" aria-hidden="true"><span>SECURE ACCESS TERMINAL</span><span>NX-08 · CODE VAULT</span></div>
+      <div class="eyebrow"><span class="eyebrow-line"></span> PERSONAL CODE STORAGE <span class="eyebrow-line"></span></div>
+      <h1 id="manager-title">MANAGE YOUR CODES</h1>
+      <p class="subtitle">ADD · EDIT · REMOVE</p>
+      <p class="manager-help">Every saved code is a valid answer in the game. Add as many as you like; use 4–6 letters, numbers, or symbols: !@#$%^&amp;*</p>
+
+      <form class="code-editor-form" id="code-form" autocomplete="off">
+        <label for="code-value" id="editor-label">NEW ACCESS CODE</label>
+        <div class="code-editor-controls">
+          <input id="code-value" name="code" type="text" maxlength="6" inputmode="text"
+            autocapitalize="characters" spellcheck="false"
+            placeholder="E.G. A7#K2P" aria-describedby="code-format">
+          <button class="new-code-button" id="save-code" type="submit">SAVE CODE</button>
+          <button class="new-code-button editor-cancel" id="cancel-edit" type="button" hidden>CANCEL</button>
+        </div>
+        <p id="code-format" class="vault-help">Save 4–6 characters: A–Z, 0–9, or !@#$%^&amp;*. Letters are not case-sensitive.</p>
+      </form>
+
+      <form class="bulk-code-form" id="bulk-code-form" autocomplete="off">
+        <label for="bulk-code-value">ADD MULTIPLE CODES</label>
+        <p class="vault-help">Paste one code per line. Commas and semicolons also work.</p>
+        <textarea id="bulk-code-value" rows="4" spellcheck="false"
+          placeholder="NEXU&#10;A7#K2P&#10;9XY!"></textarea>
+        <button class="new-code-button bulk-save-button" type="submit">ADD ALL CODES</button>
+      </form>
+
+      <div class="manager-list-heading">
+        <h2>SAVED CODES</h2>
+        <div class="manager-list-actions">
+          <span id="manager-count">0 CODES</span>
+          <button class="code-action code-action--remove delete-all-button" id="delete-all-codes"
+            type="button" disabled>DELETE ALL</button>
+        </div>
+      </div>
+      <p class="manager-message" id="manager-message" role="status" aria-live="polite"></p>
+      <ul class="managed-codes" id="managed-codes" aria-label="Saved codes"></ul>
+      <p class="manager-empty" id="manager-empty">NO CODES SAVED YET. ADD ONE ABOVE TO GET STARTED.</p>
+
+      <div class="manager-footer">
+        <span>CODES STAY IN THIS BROWSER</span>
+        <a href="index.html">RETURN TO GAME →</a>
+      </div>
+    </section>
+
+    <footer class="footer"><span>NEXUS SECURITY SYSTEMS</span><span>ENCRYPTION STATUS:
+        <strong>ACTIVE</strong></span><span>EST. 2089</span></footer>
+  </main>
+
+  <script src="js/codes.js"></script>
+</body>
+
+</html>

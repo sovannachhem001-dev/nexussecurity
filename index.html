@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020c0a">
+  <meta name="description" content="Crack the secret code in this futuristic code-breaking challenge.">
+  <title>Secret Code — System Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <canvas class="matrix-canvas" id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient--left" aria-hidden="true"></div>
+  <div class="ambient ambient--right" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="grid-floor" aria-hidden="true"></div>
+  <div class="screen-frame" aria-hidden="true">
+    <span class="frame-corner frame-corner--tl"></span>
+    <span class="frame-corner frame-corner--tr"></span>
+    <span class="frame-corner frame-corner--bl"></span>
+    <span class="frame-corner frame-corner--br"></span>
+    <span class="frame-light frame-light--left"></span>
+    <span class="frame-light frame-light--right"></span>
+  </div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="NEXUS home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span class="brand-name">NEXUS<span>//</span>SECURITY</span>
+      </a>
+      <div class="system-status"><span class="status-dot"></span><span id="system-status">SYSTEM ONLINE</span></div>
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false"
+        aria-label="Enable sound effects">
+        <span class="sound-icon" aria-hidden="true">♪</span><span>SOUND <span id="sound-state">OFF</span></span>
+      </button>
+    </header>
+
+    <section class="game-panel" id="game-panel" aria-labelledby="game-title">
+      <div class="panel-topline" aria-hidden="true"><span>SECURE ACCESS TERMINAL</span><span>NX-08 · ENCRYPTED</span>
+      </div>
+      <span class="panel-bracket panel-bracket--tl" aria-hidden="true"></span>
+      <span class="panel-bracket panel-bracket--tr" aria-hidden="true"></span>
+      <span class="panel-bracket panel-bracket--bl" aria-hidden="true"></span>
+      <span class="panel-bracket panel-bracket--br" aria-hidden="true"></span>
+
+      <div class="eyebrow"><span class="eyebrow-line"></span> AUTHORIZED PERSONNEL ONLY <span
+          class="eyebrow-line"></span></div>
+      <h1 id="game-title">ENTER SECRET CODE</h1>
+      <p class="subtitle">UNLOCK THE SYSTEM</p>
+
+      <form id="guess-form" autocomplete="off">
+        <div class="input-caption"><span>INPUT ACCESS CODE</span><span id="code-length-label">6 CHARACTERS</span></div>
+        <div class="code-inputs" id="code-inputs" role="group" aria-label="Enter your secret code"></div>
+        <button class="enter-button" id="enter-button" type="submit">
+          <span class="button-arrow" aria-hidden="true">↳</span>
+          <span class="button-label">ENTER</span>
+          <span class="button-loader" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <div class="feedback" id="feedback" role="status" aria-live="polite">
+        <span class="feedback-indicator" aria-hidden="true"></span>
+        <span id="feedback-message">AWAITING INPUT — ENTER A CODE TO BEGIN</span>
+      </div>
+
+      <div class="game-actions">
+        <button class="text-button" id="hint-button" type="button"><span aria-hidden="true">⌁</span> REQUEST HINT <span
+            class="hint-count" id="hint-count">01</span></button>
+        <button class="text-button" id="restart-button" type="button"><span aria-hidden="true">↻</span> RESTART
+          GAME</button>
+      </div>
+
+      <section class="attempts-section" aria-labelledby="attempts-title">
+        <div class="section-heading"><span id="attempts-title">DECRYPTION LOG</span><span id="log-count">0
+            ENTRIES</span></div>
+        <div class="attempts-list" id="attempts-list" aria-live="polite">
+          <p class="empty-log">YOUR ATTEMPTS WILL APPEAR HERE</p>
+        </div>
+      </section>
+
+      <div class="panel-bottomline" aria-hidden="true"><span></span><span>SECURE CHANNEL ACTIVE</span><span></span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>NEXUS SECURITY SYSTEMS</span>
+      <span>ENCRYPTION STATUS: <strong><a href="codes.html">ACTIVE</a></strong></span>
+      <span>EST. 2089</span>
+    </footer>
+  </main>
+
+  <div class="victory-overlay" id="victory-overlay" aria-hidden="true">
+    <div class="victory-content">
+      <div class="victory-symbol" aria-hidden="true">✓</div>
+      <p>SYSTEM BREACHED</p>
+      <h2>ACCESS GRANTED</h2>
+      <div class="victory-code" id="victory-code"></div>
+      <p class="victory-score" id="victory-score"></p><button id="victory-restart" type="button">PLAY AGAIN <span
+          aria-hidden="true">↗</span></button>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/game.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
