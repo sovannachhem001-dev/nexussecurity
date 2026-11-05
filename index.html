@@ -43,61 +43,66 @@
       </button>
     </header>
 
-    <section class="game-panel" id="game-panel" aria-labelledby="game-title">
-      <div class="panel-topline" aria-hidden="true"><span>SECURE ACCESS TERMINAL</span><span>NX-08 · ENCRYPTED</span>
-      </div>
-      <span class="panel-bracket panel-bracket--tl" aria-hidden="true"></span>
-      <span class="panel-bracket panel-bracket--tr" aria-hidden="true"></span>
-      <span class="panel-bracket panel-bracket--bl" aria-hidden="true"></span>
-      <span class="panel-bracket panel-bracket--br" aria-hidden="true"></span>
+    <div class="game-stage">
+      <section class="game-panel" id="game-panel" aria-labelledby="game-title">
+        <div class="panel-topline" aria-hidden="true"><span>SECURE ACCESS TERMINAL</span><span>NX-08 · ENCRYPTED</span>
+        </div>
+        <span class="panel-bracket panel-bracket--tl" aria-hidden="true"></span>
+        <span class="panel-bracket panel-bracket--tr" aria-hidden="true"></span>
+        <span class="panel-bracket panel-bracket--bl" aria-hidden="true"></span>
+        <span class="panel-bracket panel-bracket--br" aria-hidden="true"></span>
 
-      <div class="eyebrow"><span class="eyebrow-line"></span> AUTHORIZED PERSONNEL ONLY <span
-          class="eyebrow-line"></span></div>
-      <h1 id="game-title">ENTER SECRET CODE</h1>
-      <p class="subtitle">UNLOCK THE SYSTEM</p>
+        <h1 id="game-title">ENTER SECRET CODE</h1>
+        <p class="subtitle">UNLOCK THE SYSTEM</p>
 
-      <div class="game-instructions" aria-label="How to play">
-        <strong>HOW TO PLAY</strong>
-        <span>Enter the hidden code, one character per box.</span>
-        <span class="match-legend">
-          <span><b class="legend-exact">Exact</b> — right character and position</span>
-          <span><b class="legend-misplaced">Misplaced</b> — right character, wrong position</span>
-        </span>
-      </div>
+        <form id="guess-form" autocomplete="off">
+          <div class="input-caption"><span>INPUT ACCESS CODE</span><span id="code-length-label">6 CHARACTERS</span>
+          </div>
+          <div class="code-inputs" id="code-inputs" role="group" aria-label="Enter your secret code"></div>
+          <button class="enter-button" id="enter-button" type="submit">
+            <span class="button-arrow" aria-hidden="true">↳</span>
+            <span class="button-label">ENTER</span>
+            <span class="button-loader" aria-hidden="true"></span>
+          </button>
+        </form>
 
-      <form id="guess-form" autocomplete="off">
-        <div class="input-caption"><span>INPUT ACCESS CODE</span><span id="code-length-label">6 CHARACTERS</span></div>
-        <div class="code-inputs" id="code-inputs" role="group" aria-label="Enter your secret code"></div>
-        <button class="enter-button" id="enter-button" type="submit">
-          <span class="button-arrow" aria-hidden="true">↳</span>
-          <span class="button-label">ENTER</span>
-          <span class="button-loader" aria-hidden="true"></span>
-        </button>
-      </form>
-
-      <div class="feedback" id="feedback" role="status" aria-live="polite">
-        <span class="feedback-indicator" aria-hidden="true"></span>
-        <span id="feedback-message">AWAITING INPUT — ENTER A CODE TO BEGIN</span>
-      </div>
-
-      <div class="game-actions">
-        <button class="text-button" id="hint-button" type="button"><span aria-hidden="true">⌁</span> REQUEST HINT <span
-            class="hint-count" id="hint-count">01</span></button>
-        <button class="text-button" id="restart-button" type="button"><span aria-hidden="true">↻</span> RESTART
-          GAME</button>
-      </div>
-
-      <section class="attempts-section" aria-labelledby="attempts-title">
-        <div class="section-heading"><span id="attempts-title">DECRYPTION LOG</span><span id="log-count">0
-            ENTRIES</span></div>
-        <div class="attempts-list" id="attempts-list" aria-live="polite">
-          <p class="empty-log">YOUR ATTEMPTS WILL APPEAR HERE</p>
+        <div class="panel-bottomline" aria-hidden="true"><span></span><span>SECURE CHANNEL ACTIVE</span><span></span>
         </div>
       </section>
 
-      <div class="panel-bottomline" aria-hidden="true"><span></span><span>SECURE CHANNEL ACTIVE</span><span></span>
+      <div class="game-support">
+        <div class="game-instructions" aria-label="How to play">
+          <strong>HOW TO PLAY</strong>
+          <span>Enter the hidden code, one character per box.</span>
+          <span class="match-legend">
+            <span><b class="legend-exact">Exact</b> — right character and position</span>
+            <span><b class="legend-misplaced">Misplaced</b> — right character, wrong position</span>
+          </span>
+        </div>
+
+        <div class="game-support-tools">
+          <div class="feedback" id="feedback" role="status" aria-live="polite">
+            <span class="feedback-indicator" aria-hidden="true"></span>
+            <span id="feedback-message">AWAITING INPUT — ENTER A CODE TO BEGIN</span>
+          </div>
+
+          <div class="game-actions">
+            <button class="text-button" id="hint-button" type="button"><span aria-hidden="true">⌁</span> REQUEST HINT
+              <span class="hint-count" id="hint-count">01</span></button>
+            <button class="text-button" id="restart-button" type="button"><span aria-hidden="true">↻</span> RESTART
+              GAME</button>
+          </div>
+        </div>
+
+        <section class="attempts-section" aria-labelledby="attempts-title">
+          <div class="section-heading"><span id="attempts-title">DECRYPTION LOG</span><span id="log-count">0
+              ENTRIES</span></div>
+          <div class="attempts-list" id="attempts-list" aria-live="polite">
+            <p class="empty-log">YOUR ATTEMPTS WILL APPEAR HERE</p>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
 
     <footer class="footer">
       <span>NEXUS SECURITY SYSTEMS</span>
