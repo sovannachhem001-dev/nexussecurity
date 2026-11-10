@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#020c0a">
   <meta name="description" content="Add, edit, and remove your saved secret codes.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NEXUS Security">
   <title>Code Manager — NEXUS Security</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -37,6 +43,7 @@
         <span class="brand-name">NEXUS<span>//</span>SECURITY</span>
       </a>
       <div class="system-status"><span class="status-dot"></span><span>CODE VAULT</span></div>
+      <button class="install-button" id="install-button" type="button" hidden>INSTALL</button>
       <a class="sound-toggle manager-back-link" href="index.html">← BACK TO GAME</a>
     </header>
 
@@ -90,6 +97,7 @@
   </main>
 
   <script src="js/codes.js"></script>
+  <script src="js/pwa.js"></script>
 </body>
 
 </html>

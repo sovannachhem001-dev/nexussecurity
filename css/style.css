@@ -229,7 +229,8 @@ input:focus-visible {
 }
 
 .system-status,
-.sound-toggle {
+.sound-toggle,
+.install-button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -260,6 +261,24 @@ input:focus-visible {
   background: rgba(0, 0, 0, .25);
   cursor: pointer;
   transition: .2s;
+}
+
+.install-button {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, .25);
+  color: var(--green);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.install-button:hover {
+  border-color: var(--green);
+  background: rgba(0, 255, 131, .08);
+}
+
+.install-button[hidden] {
+  display: none;
 }
 
 .sound-toggle:hover,
@@ -1236,6 +1255,10 @@ body.game-won {
     font-size: 7px;
   }
 
+  .code-manager-shell .system-status {
+    display: none;
+  }
+
   .code-editor-controls {
     flex-wrap: wrap;
   }
@@ -1259,8 +1282,13 @@ body.game-won {
   }
 
   .system-status,
-  .sound-toggle {
+  .sound-toggle,
+  .install-button {
     font-size: 7px;
+  }
+
+  .install-button {
+    padding: 6px;
   }
 
   .game-panel {
@@ -1727,13 +1755,15 @@ h1 {
   }
 
   .system-status,
-  .sound-toggle {
+  .sound-toggle,
+  .install-button {
     gap: 4px;
     font-size: 6px;
     letter-spacing: .5px;
   }
 
-  .sound-toggle {
+  .sound-toggle,
+  .install-button {
     padding: 5px 6px;
   }
 

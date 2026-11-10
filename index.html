@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#020c0a">
   <meta name="description" content="Crack the secret code in this futuristic code-breaking challenge.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NEXUS Security">
   <title>Secret Code — System Access</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -37,6 +43,7 @@
         <span class="brand-name">NEXUS<span>//</span>SECURITY</span>
       </a>
       <div class="system-status"><span class="status-dot"></span><span id="system-status">SYSTEM ONLINE</span></div>
+      <button class="install-button" id="install-button" type="button" hidden>INSTALL</button>
       <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false"
         aria-label="Enable sound effects">
         <span class="sound-icon" aria-hidden="true">♪</span><span>SOUND <span id="sound-state">OFF</span></span>
@@ -125,6 +132,7 @@
 
   <script src="js/game.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/pwa.js"></script>
 </body>
 
 </html>

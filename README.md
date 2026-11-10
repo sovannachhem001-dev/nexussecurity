@@ -6,6 +6,12 @@ A responsive, futuristic secret-code guessing game made with HTML, CSS, and vani
 
 Open `index.html` in a modern browser. No build step, backend, or package installation is required.
 
+## Install on your devices
+
+Publish the site to an HTTPS web host (or run it from `localhost` while developing) to enable installation and offline play. Open the site in a supported browser and choose **INSTALL APP** when it appears; on iPhone or iPad, open the site in Safari, tap **Share**, then **Add to Home Screen**. The installed game can also be opened from your desktop or tablet browser's install option. Opening the files directly with `file://` does not support web-app installation.
+
+The app caches its game pages and assets for offline use after the first successful visit. Gameplay and saved codes are stored separately by each browser/device.
+
 ## How it works
 
 - Crack the randomly generated code before your attempts or countdown run out.
