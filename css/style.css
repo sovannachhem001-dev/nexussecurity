@@ -264,17 +264,27 @@ input:focus-visible {
 }
 
 .install-button {
-  padding: 7px 10px;
-  border: 1px solid var(--line);
-  background: rgba(0, 0, 0, .25);
-  color: var(--green);
+  min-width: 76px;
+  min-height: 34px;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(0, 255, 131, .72);
+  background:
+    linear-gradient(rgba(2, 12, 10, .58), rgba(2, 12, 10, .72)),
+    url("../images/install-button.png") center 48% / cover;
+  color: #b7ffd9;
   cursor: pointer;
   transition: .2s;
+  text-shadow: 0 0 8px #00ff83, 0 1px 3px #000;
+  box-shadow: inset 0 0 12px rgba(0, 255, 131, .12);
 }
 
 .install-button:hover {
   border-color: var(--green);
-  background: rgba(0, 255, 131, .08);
+  background:
+    linear-gradient(rgba(2, 12, 10, .36), rgba(2, 12, 10, .56)),
+    url("../images/install-button.png") center 48% / cover;
+  box-shadow: 0 0 12px rgba(0, 255, 131, .38), inset 0 0 12px rgba(0, 255, 131, .2);
 }
 
 .install-button[hidden] {

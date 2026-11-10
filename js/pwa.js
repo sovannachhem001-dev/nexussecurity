@@ -19,11 +19,15 @@
 
   if (!installButton || isStandalone) return;
 
-  installButton.hidden = false;
+  if (isIOS) {
+    installButton.hidden = false;
+    installButton.textContent = "HOW TO INSTALL";
+  }
 
   window.addEventListener("beforeinstallprompt", function (event) {
     event.preventDefault();
     installPrompt = event;
+    installButton.hidden = false;
   });
 
   window.addEventListener("appinstalled", function () {
@@ -34,11 +38,7 @@
   installButton.addEventListener("click", function () {
     if (!installPrompt) {
       if (isIOS) {
-        window.alert("To install NEXUS Security, open this page in Safari, tap Share, then choose Add to Home Screen.");
-      } else if (!window.isSecureContext) {
-        window.alert("To install NEXUS Security, open the published site over HTTPS. Installation is not available when opening the files directly.");
-      } else {
-        window.alert("To install NEXUS Security, use your browser menu and choose Install app or Add to Home Screen. In Chrome or Edge on a computer, you can also use the install icon in the address bar.");
+        window.alert("To install NEXUS Security, open this page in Safari, tap the Share button, then choose “Add to Home Screen”.");
       }
       return;
     }

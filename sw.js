@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = "nexus-secret-code-v1";
+const CACHE_NAME = "nexus-secret-code-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -9,6 +9,7 @@ const APP_SHELL = [
   "./icons/icon.svg",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
+  "./images/install-button.png",
   "./css/style.css",
   "./js/game.js",
   "./js/script.js",
